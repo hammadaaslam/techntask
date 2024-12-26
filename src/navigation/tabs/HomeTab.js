@@ -56,7 +56,7 @@ const Tab = createBottomTabNavigator();
 
 export default function HomeTab() {
 
-   const theme = useSelector(state=>state.theme)
+   const role = useSelector(state=>state.role)
 
 //   const roleChangeEmitter = new EventEmitter();
 
@@ -93,7 +93,7 @@ export default function HomeTab() {
 
     // <DrawerSceneWrapper>
 <>
-{theme.mode === 'dark' 
+{role.mode === 'user' 
 
 
 ?
@@ -103,18 +103,20 @@ screenOptions={{
   headerShown: false,
   tabBarShowLabel:false,
   tabBarStyle: {
-    backgroundColor: '#23265a',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    height: 55,
+    backgroundColor: 'white',
+    // elevation
+    // borderTopLeftRadius: 20,
+    // borderTopRightRadius: 20,
+    // height: 55,
     // width:'50%',
     // overflow: 'hidden',
-    position: 'absolute',
+    // position: 'absolute',
     // zIndex:999999,
     // bottom:0
     borderTopWidth:0,
     // borderTopColor:'#23265a',
     // marginHorizontal:20
+    // elevation:3
     
   },
   
@@ -133,9 +135,11 @@ screenOptions={{
         <View style={styles.menuView}>
             <Image resizeMode="contain"
           
-            source={theme.mode == 'dark'   ?  require('../../images/homebottom.png') : require('../../images/shopbottom.png') }
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
+            source={require('../../images/homebottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
           />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
          
         </View>
       );
@@ -152,9 +156,11 @@ screenOptions={{
         <View style={styles.menuView}>
           
           <Image resizeMode="contain"
-            source={require('../../images/shopbottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
-          />
+            source={require('../../images/locationbottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
+            />
+  
+            {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
         </View>
       );
     },
@@ -169,7 +175,7 @@ screenOptions={{
   
   options={{
     // tabBarStyle:{}
-    tabBarStyle:{display:'none'},
+    // tabBarStyle:{display:'none'},
     
     
     tabBarIcon: ({focused}) => {
@@ -177,9 +183,11 @@ screenOptions={{
         <View style={styles.menuView}>
           
           <Image resizeMode="contain"
-            source={require('../../images/messagebottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
+            source={require('../../images/bookmarkbottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
           />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
         </View>
       );
     },
@@ -197,9 +205,11 @@ screenOptions={{
         <View style={styles.menuView}>
           
           <Image resizeMode="contain"
-            source={require('../../images/messagebottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
+            source={require('../../images/personbottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
           />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
           {/* <MaterialCommunityIcons
             // style={{marginRight: 10}}
             name="shopping"
@@ -229,13 +239,13 @@ screenOptions={{
   headerShown: false,
   tabBarShowLabel:false,
   tabBarStyle: {
-    backgroundColor: '#23265a',
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
-    height: 55,
+    backgroundColor: 'white',
+    // borderTopLeftRadius: 20,
+    // borderTopRightRadius: 20,
+    // height: 55,
     // width:'50%',
     // overflow: 'hidden',
-    position: 'absolute',
+    // position: 'absolute',
     // zIndex:999999,
     // bottom:0
     borderTopWidth:0,
@@ -259,9 +269,11 @@ screenOptions={{
         <View style={styles.menuView}>
             <Image resizeMode="contain"
           
-            source={theme.mode == 'dark'   ?  require('../../images/homebottom.png') : require('../../images/shopbottom.png') }
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
+            source={require('../../images/homebottom.png') }
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
           />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
          
         </View>
       );
@@ -279,8 +291,10 @@ screenOptions={{
           
           <Image resizeMode="contain"
             source={require('../../images/shopbottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
-          />
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
+            />
+  
+            {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
         </View>
       );
     },
@@ -304,8 +318,10 @@ screenOptions={{
           
           <Image resizeMode="contain"
             source={require('../../images/messagebottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#B8D23B' : 'white',}]}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
           />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
         </View>
       );
     },

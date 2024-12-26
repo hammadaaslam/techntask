@@ -15,30 +15,19 @@ import {
 const Description = ({navigation}) => {
   return (
     <View style={{  flex: 1,
-        //   justifyContent: 'center',
-        //   alignItems: 'center',
-        backgroundColor: '#1A1C43'}}>
-            <ScrollView>
-                
-                <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          marginTop: 10,
-          borderBottomColor: 'white',
-          borderBottomWidth: 1,
-          height:45
-          
-        }}>
-        <Text style={{fontSize: 15,  marginLeft: 10,color:'white'}}>
-          Developer Atique
-        </Text>
-      
-      </View>
+      //   justifyContent: 'center',
+      //   alignItems: 'center',
+      backgroundColor: 'white'}}>
 
-        </ScrollView>
-    </View>
+<ScrollView>
+          
+              
+             
+
+   
+
+                  </ScrollView>
+  </View>
   )
 }
 
