@@ -965,6 +965,17 @@ Pet
               
                             </View>
 
+
+
+
+
+                            <View style={{alignSelf:'center',width:'90%',marginTop:20}}>
+
+                            <Image  source={require('../images/bigmap.png')} style={{ height: 200, width: '100%',}} resizeMode='contain' />
+
+
+                            </View>
+
           
               
              
