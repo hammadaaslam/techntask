@@ -16,6 +16,7 @@ import DashBoard from '../../screens/DashBoard';
 import Description from '../../screens/Description';
 import Review from '../../screens/Review';
 import Gallery from '../../screens/Gallery';
+import ArtificalIntelligence from '../../screens/ArtificalIntelligence';
 // import { EventEmitter } from 'react-native';
 
 
@@ -281,25 +282,8 @@ screenOptions={{
   }}
 />
 
-<Tab.Screen
-  name="Description"
-  component={Description}
-  options={{
-    tabBarIcon: ({focused}) => {
-      return (
-        <View style={styles.menuView}>
-          
-          <Image resizeMode="contain"
-            source={require('../../images/shopbottom.png')}
-            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
-            />
-  
-            {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
-        </View>
-      );
-    },
-  }}
-/>
+
+
 
 <Tab.Screen
   name="Review"
@@ -309,7 +293,7 @@ screenOptions={{
   
   options={{
     // tabBarStyle:{}
-    tabBarStyle:{display:'none'},
+    // tabBarStyle:{display:'none'},
     
     
     tabBarIcon: ({focused}) => {
@@ -327,6 +311,92 @@ screenOptions={{
     },
   }}
 />
+
+
+<Tab.Screen
+  name="Description"
+  component={Description}
+  options={{
+    tabBarIcon: ({focused}) => {
+      return (
+        <View style={styles.menuView}>
+          
+          <Image resizeMode="contain"
+            source={require('../../images/personbottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
+            />
+  
+            {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
+        </View>
+      );
+    },
+  }}
+/>
+
+
+
+<Tab.Screen
+  name="ArtificalIntelligence"
+  component={ArtificalIntelligence}
+  
+  
+  
+  options={{
+    // tabBarStyle:{}
+    // tabBarStyle:{display:'none'},
+    
+    
+    tabBarIcon: ({focused}) => {
+      return (
+        <View style={styles.menuView}>
+          
+          <Image resizeMode="contain"
+            source={require('../../images/artificial-intelligence.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
+          />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
+        </View>
+      );
+    },
+  }}
+/>
+
+
+
+<Tab.Screen
+  name="Gallery"
+  component={Gallery}
+  
+  
+  
+  options={{
+    // tabBarStyle:{}
+    // tabBarStyle:{display:'none'},
+    
+    
+    tabBarIcon: ({focused}) => {
+      return (
+        <View style={styles.menuView}>
+          
+          <Image resizeMode="contain"
+            source={require('../../images/personbottom.png')}
+            style={[styles.menuIcon,{ tintColor: focused ? '#3C94FF' : 'gray',}]}
+          />
+
+          {focused ? <View  style={{backgroundColor:'#3C94FF',height:10,width:10,borderRadius:200,marginTop:5}} /> : null}
+        </View>
+      );
+    },
+  }}
+/>
+
+
+
+
+
+
+
 </Tab.Navigator>
 
 
