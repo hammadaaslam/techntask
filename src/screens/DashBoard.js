@@ -9,7 +9,8 @@ import {
   ScrollView,
   StatusBar,
   Modal,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Pressable
 } from 'react-native';
 import React, { useState, useRef } from "react";
 import { useDispatch } from 'react-redux';
@@ -378,6 +379,9 @@ const DashBoard = ({ navigation }) => {
 
 {data.map((item,index)=> (
 
+
+<Pressable onPress={()=>navigation.navigate('ContentScreen')}>
+
 <View style={{ backgroundColor: 'white', elevation: 7, alignSelf: 'center', width: '90%', height: 150, marginTop: 10, justifyContent: 'space-between', borderRadius: 20, flexDirection: 'row', alignItems: 'center' }}>
 
 
@@ -500,7 +504,7 @@ const DashBoard = ({ navigation }) => {
 
 </View>
 
-
+</Pressable>
 
 
 ))}

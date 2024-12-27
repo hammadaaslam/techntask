@@ -16,6 +16,7 @@ import DashBoard from '../../screens/DashBoard';
 import Description from '../../screens/Description';
 import Gallery from '../../screens/Gallery';
 import Review from '../../screens/Review';
+import ContentScreen from '../../screens/ContentScreen';
 
 
 
@@ -48,6 +49,7 @@ const Routes = () => {
       <Stack.Screen name={'Description'} component={Description} />
       <Stack.Screen name={'Gallery'} component={Gallery} />
       <Stack.Screen name={'Review'} component={Review} />
+      <Stack.Screen name={'ContentScreen'} component={ContentScreen} />
 
       
     </Stack.Navigator>
