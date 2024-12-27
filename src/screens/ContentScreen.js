@@ -18,64 +18,79 @@ import { Colors } from '../utils/Colors';
 const ContentScreen = ({navigation}) => {
 
 
-    // const data = [
-    //     {
-    //         id: 1,
-    //         image: require('../images/bxs_car-wash.png'),
-    //         title: 'Car Parking',
+    const data = [
+        {
+            id: 1,
+            image: require('../images/bxs_car-wash.png'),
+            title: 'Car Parking',
 
-    //     },
-    //     {
-    //       id: 2,
-    //       image: require('../images/map_swimming.png'),
+        },
+        {
+          id: 2,
+          image: require('../images/map_swimming.png'),
 
-    //       title: 'Swimming',
+          title: 'Swimming',
         
-    //   },
-    //   {
-    //     id: 3,
-    //     image: require('../images/material-symbols_exercise.png'),
+      },
+      {
+        id: 3,
+        image: require('../images/material-symbols_exercise.png'),
 
-    //     title: 'Gym',
+        title: 'Gym',
       
-    // },
-    // {
-    //     id: 4,
-    //     image: require('../images/eat.png'),
+    },
+    {
+        id: 4,
+        image: require('../images/eat.png'),
 
-    //     title: 'Restaurant',
+        title: 'Restaurant',
       
-    // },
-    // {
-    //     id: 5,
-    //     image: require('../images/fontisto_wifi.png'),
+    },
+    {
+        id: 5,
+        image: require('../images/fontisto_wifi.png'),
 
-    //     title: 'WIFI',
+        title: 'WIFI',
       
-    // },
-    // {
-    //     id: 2,
-    //     image: require('../images/ic_baseline-pets.png'),
+    },
+    {
+        id: 2,
+        image: require('../images/ic_baseline-pets.png'),
 
-    //     title: 'Pet Center',
+        title: 'Pet Center',
       
-    // },
-    // {
-    //     id: 2,
-    //     image: require('../images/fa-solid_running.png'),
+    },
+    {
+        id: 2,
+        image: require('../images/fa-solid_running.png'),
 
-    //     title: 'Sports',
+        title: 'Sports',
       
-    // },
-    // {
-    //     id: 2,
-    //     image: require('../images/map_laundary.png'),
+    },
+    {
+        id: 2,
+        image: require('../images/map_laundry.png'),
 
-    //     title: 'Laundry',
+        title: 'Laundry',
       
-    // },
+    },
         
-    // ];
+    ];
+
+
+
+
+
+    const chunkArray = (array, size) => {
+      const result = [];
+      for (let i = 0; i < array.length; i += size) {
+        result.push(array.slice(i, i + size));
+      }
+      return result;
+    };
+
+
+    const chunkedData = chunkArray(data, 4);
 
 
 
@@ -536,405 +551,92 @@ const ContentScreen = ({navigation}) => {
 
 
 
-
-
-
-
+{chunkedData.map((row, rowIndex) => (
 
 <View
-          style={{
-            marginTop: 10,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width:'90%',
-            alignSelf:'center',
-            height:70,
-            alignItems:'center'
-          }}>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-            <TouchableOpacity
-              >
-              <View
-                style={{
-                  backgroundColor: 'white',
-                  elevation:3,
-                  height: 60,
-                  width: 70,
-                  borderRadius: 15,
-                  justifyContent: 'center',
-                }}>
-                {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="notifications-outline"
-              size={20}
-              color={'white'}
-            /> */}
-                <Image
-                  resizeMode="contain"
-                  source={require('../images/bxs_car-wash.png')}
-                  style={styles.menuIcon}
-                />
+style={{
+marginTop: 10,
+flexDirection: 'row',
+justifyContent: 'space-between',
+width:'90%',
+alignSelf:'center',
+height:70,
+alignItems:'center'
+}}>
+{row.map((item, index) => (
 
+<View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
 
-                
-
-
-
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-     Car Parking
-            </Text>
-              </View>
-
-
-          
-            </TouchableOpacity>
-            
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-            <TouchableOpacity > 
-            <View
-              style={{
-                backgroundColor: 'white',
-                  elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="notifications-outline"
-              size={20}
-              color={'white'}
-            /> */}
-              <Image
-                resizeMode="contain"
-                source={require('../images/map_swimming.png')}
-                style={styles.menuIcon}
-              />
-
-
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-       Swimming...
-            </Text>
-            </View>
-
-
-            
-
-            </TouchableOpacity>
-          
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-          <TouchableOpacity> 
-            <View
-              style={{
-                backgroundColor: 'white',
-                elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              <Image
-                resizeMode="contain"
-                source={require('../images/material-symbols_exercise.png')}
-                style={styles.menuIcon}
-              />
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="cloud"
-              size={20}
-              color={'white'}
-            /> */}
-
-
-            
+<TouchableOpacity
+>
+<View
+style={{
+backgroundColor: 'white',
+elevation:3,
+height: 60,
+width: 70,
+borderRadius: 15,
+justifyContent: 'center',
+}}>
+{/* <Ionicons
+style={{alignSelf: 'center'}}
+name="notifications-outline"
+size={20}
+color={'white'}
+/> */}
+<Image
+resizeMode="contain"
+source={item?.image}
+style={styles.menuIcon}
+/>
 
 
 
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-     Gym & Fit
-            </Text>
-            </View>
 
 
-          
-            </TouchableOpacity>
-           
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-          <TouchableOpacity > 
-            <View
-              style={{
-                backgroundColor: 'white',
-                elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="barcode"
-              size={20}
-              color={'white'}
-            /> */}
-              <Image
-                resizeMode="contain"
-                source={require('../images/eat.png')}
-                style={styles.menuIcon}
-              />
+<Text
+style={{
+fontSize: 9,
+color:Colors.gray,
+// color: colorScheme === 'dark'  ? '#fff' : '#000',
+marginTop: 5,
+textAlign: 'center',
+// fontFamily: Fonts.light,
+}}>
+{item?.title}
+</Text>
 
 
-
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-      Restaurant
-            </Text>
-
-
-            </View>
-
-
-            
-            </TouchableOpacity>
-           
-          </View>
-
-        
-        </View>
+</View>
 
 
 
 
 
 
-        <View
-          style={{
-            marginTop: 10,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            width:'90%',
-            alignSelf:'center',
-            height:70,
-            alignItems:'center'
-          }}>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-            <TouchableOpacity
-              >
-              <View
-                style={{
-                  backgroundColor: 'white',
-                  elevation:3,
-                  height: 60,
-                  width: 70,
-                  borderRadius: 15,
-                  justifyContent: 'center',
-                }}>
-                {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="notifications-outline"
-              size={20}
-              color={'white'}
-            /> */}
-                <Image
-                  resizeMode="contain"
-                  source={require('../images/fontisto_wifi.png')}
-                  style={styles.menuIcon}
-                />
+</TouchableOpacity>
 
+</View>
 
-                
+))}
 
 
 
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-     Wifi
-            </Text>
-              </View>
 
+</View>
 
-          
-            </TouchableOpacity>
-            
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-            <TouchableOpacity > 
-            <View
-              style={{
-                backgroundColor: 'white',
-                  elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="notifications-outline"
-              size={20}
-              color={'white'}
-            /> */}
-              <Image
-                resizeMode="contain"
-                source={require('../images/ic_baseline-pets.png')}
-                style={styles.menuIcon}
-              />
-
-
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-Pet
-            </Text>
-            </View>
-
-
-            
-
-            </TouchableOpacity>
-          
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-          <TouchableOpacity> 
-            <View
-              style={{
-                backgroundColor: 'white',
-                elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              <Image
-                resizeMode="contain"
-                source={require('../images/fa-solid_running.png')}
-                style={styles.menuIcon}
-              />
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="cloud"
-              size={20}
-              color={'white'}
-            /> */}
-
-
-            
+))}
 
 
 
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-     Sports
-            </Text>
-            </View>
-
-
-          
-            </TouchableOpacity>
-           
-          </View>
-          <View style={{width: 85, textAlign: 'center', alignItems: 'center'}}>
-          <TouchableOpacity > 
-            <View
-              style={{
-                backgroundColor: 'white',
-                elevation:3,
-                height: 60,
-                width: 70,
-                borderRadius: 15,
-                justifyContent: 'center',
-              }}>
-              {/* <Ionicons
-              style={{alignSelf: 'center'}}
-              name="barcode"
-              size={20}
-              color={'white'}
-            /> */}
-              <Image
-                resizeMode="contain"
-                source={require('../images/map_laundry.png')}
-                style={styles.menuIcon}
-              />
 
 
 
-            <Text
-              style={{
-                fontSize: 9,
-                color:Colors.gray,
-                // color: colorScheme === 'dark'  ? '#fff' : '#000',
-                marginTop: 5,
-                textAlign: 'center',
-                // fontFamily: Fonts.light,
-              }}>
-   Laundry
-            </Text>
 
 
-            </View>
 
 
-            
-            </TouchableOpacity>
-           
-          </View>
-
-        
-        </View>
+       
 
 
 
@@ -976,7 +678,16 @@ Pet
 
                             </View>
 
-          
+
+
+
+
+
+
+
+
+
+            
               
              
                   </ScrollView>
